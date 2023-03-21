@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: simpleaks
+  labels:
+    app: simpleaks
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: simpleaks
+  template:
+    metadata:
+      labels:
+        app: simpleaks
+    spec:
+      containers:
+        - name: simpleaks
+          image: simpleaks
+          ports:
+            - containerPort: 80
